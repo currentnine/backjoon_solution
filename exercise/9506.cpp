@@ -5,12 +5,15 @@ using namespace std;
 
 int main()
 {
-    vector<int>factor;
-    int n,sum=0;
-    while(n!=-1)
+    
+    int n;
+    while(true)
     {
         cin>>n;
-        for(int i=0;i<n;i++)
+        if(n==-1) break;
+        vector<int>factor;
+        int sum = 0;
+        for(int i=1;i<n;i++)
         {
             if(n%i==0) 
             {
@@ -20,7 +23,16 @@ int main()
         }
         if(sum==n)
         {
-            for(int i=0;i<factor.;
+            cout << n << " = ";
+            for(int i=0;i<int(factor.size());i++)
+            {
+                cout<<factor[i];
+                if(i!=int(factor.size())-1) cout<<" + ";
+            }
+            cout<<"\n";
+        }
+        else {
+            cout << n << " is NOT perfect."<<"\n";
         }
         
     }
